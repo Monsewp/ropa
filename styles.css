@@ -1,0 +1,199 @@
+body {
+    font-family: Seagram tfb, sans-serif;
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+h2 { 
+    color: red;
+    font-size: 29px;
+}
+
+header {
+    background-color: #343434;
+    text-align: center;
+}
+
+h1{
+    font-size: 28px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 1.5em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a :hover{
+    color: #727272;
+}
+.custom-select {
+    width: 350px;
+    padding: 13px;
+    font-size: 21px;
+    font-family: Seagram tfb, sans-serif;
+    text-align: center;
+    border: 3px solid #424141;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .custom-select:hover {
+    border-color: #aaa;
+  }
+  
+  .custom-select:focus {
+    border-color: #555;
+    outline: none;
+  }
+  
+  .custom-select option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* flecha personalizada */
+  .custom-select {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+  }
+  
+li{
+    font-size: 20px;
+}
+p{
+    padding: 0em 1em;
+    font-size: 26px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+}
+
+.contenedor img {
+    max-width: 18%;
+    height: auto;
+}
+
+.slider {
+    width: 16%;
+    max-width: 290px;
+    height: 290px; /* Ajusta esta propiedad para cambiar la altura del slider */
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.navigation {
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+.navigation label {
+    cursor: pointer;
+    padding: 3px;
+    margin: 0 0px;
+}
+input {
+    display: none;
+}
+input:checked + .slides {
+    transform: translateX(calc(var(--slider-index, 0) * -100%));
+}
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-100%); }
+#slide3:checked ~ .slides { transform: translateX(-200%); }
+#slide4:checked ~ .slides { transform: translateX(-300%); }
+#slide5:checked ~ .slides { transform: translateX(-400%); }
+#slide6:checked ~ .slides { transform: translateX(-500%); }
+#slide7:checked ~ .slides { transform: translateX(-600%); }
+#slide8:checked ~ .slides { transform: translateX(-700%); }
+#slide9:checked ~ .slides { transform: translateX(-800%); }
+#slide10:checked ~ .slides { transform: translateX(-900%); }
+
+.boton-regresar{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #343434;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+footer {
+    list-style: none;
+    text-align: center;
+    padding: .4em 1.5em;
+    background-color: #202020;
+    font-size: 20px;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+    h1, h2, p {
+        font-size: 15px;
+    }
+    li{
+        font-size: 11px;
+    }
+    .custom-select {
+        width: 250px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+}
